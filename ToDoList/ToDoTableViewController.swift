@@ -27,7 +27,10 @@ class ToDoTableViewController: UITableViewController {
         let dog = ToDo()
         dog.name = "Walk the Dog"
         
-        return [swift, dog]
+        let clean = ToDo()
+        clean.name = "Do the laundry"
+
+        return [swift, dog, clean]
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -44,7 +47,11 @@ class ToDoTableViewController: UITableViewController {
 
          //Configure the cell...
         let toDo = toDos[indexPath.row]
-        cell.textLabel?.text = toDo.name
+        if toDo.important {
+            cell.textLabel?.text = "‼️" + toDo.name
+        } else {
+            cell.textLabel?.text = "⬇️" + toDo.name
+        }
         return cell
     }
     
