@@ -37,15 +37,54 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="MmN-pK-uEG" kind="show" identifier="moveToComplete" id="FB0-4P-FR8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VMb-HK-x9f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1018.840579710145" y="118.52678571428571"/>
         </scene>
-        <!--View Controller-->
+        <!--Complete To Do View Controller-->
+        <scene sceneID="lDE-Bz-ocr">
+            <objects>
+                <viewController id="MmN-pK-uEG" customClass="CompleteToDoViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3ng-04-zhx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBi-Yf-Lmp">
+                                <rect key="frame" x="166" y="194" width="82" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGj-t3-OQZ">
+                                <rect key="frame" x="154" y="295" width="107" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Mark complete!"/>
+                                <connections>
+                                    <action selector="completeTapped:" destination="MmN-pK-uEG" eventType="touchUpInside" id="Vkh-jO-p6W"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="k6e-W6-zFb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="meh-Jc-Ucn"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="BBi-Yf-Lmp" id="URj-iK-CqH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="znU-2p-3Mb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1243" y="852"/>
+        </scene>
+        <!--Add To View Controller-->
         <scene sceneID="XxW-sG-5D9">
             <objects>
-                <viewController id="wB8-2E-dec" sceneMemberID="viewController">
+                <viewController id="wB8-2E-dec" customClass="AddToViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cg8-FF-ykS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,16 +117,23 @@
                                 <rect key="frame" x="156" y="548" width="101" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add this to do!"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="wB8-2E-dec" eventType="touchUpInside" id="nTd-fp-OlE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6N1-tO-8EO"/>
                     </view>
                     <navigationItem key="navigationItem" id="C5c-to-Z4X"/>
+                    <connections>
+                        <outlet property="importantSwitch" destination="LOQ-Sb-jrU" id="kzj-54-iga"/>
+                        <outlet property="titleTextField" destination="171-Zj-34s" id="OP6-9z-9sY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eGt-kk-Mu7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1873.913043478261" y="131.91964285714286"/>
+            <point key="canvasLocation" x="1888" y="119"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ot1-aT-Ecn">
